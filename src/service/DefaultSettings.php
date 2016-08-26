@@ -31,12 +31,15 @@ class DefaultSettings
     protected $resultHashAs = 'base64';
 
     /** @var bool */
-    protected $checkAlreadyGeneratetPassword = true;
+    protected $checkAlreadyGeneratePassword = true;
+
+    /** @var bool  */
+    protected $min = false;
 
     /**
      * @return string
      */
-    public function getFileName()
+    public function getFileName(): string
     {
         return $this->fileName;
     }
@@ -52,7 +55,7 @@ class DefaultSettings
     /**
      * @return int
      */
-    public function getMinNumberOfPasses()
+    public function getMinNumberOfPasses(): int
     {
         return $this->minNumberOfPasses;
     }
@@ -68,7 +71,7 @@ class DefaultSettings
     /**
      * @return int
      */
-    public function getMaxNumberOfPasses()
+    public function getMaxNumberOfPasses(): int
     {
         return $this->maxNumberOfPasses;
     }
@@ -84,7 +87,7 @@ class DefaultSettings
     /**
      * @return int
      */
-    public function getPasswordCount()
+    public function getPasswordCount(): int
     {
         return $this->passwordCount;
     }
@@ -100,7 +103,7 @@ class DefaultSettings
     /**
      * @return boolean
      */
-    public function isInsideSaltGeneration()
+    public function isInsideSaltGeneration(): bool
     {
         return $this->insideSaltGeneration;
     }
@@ -116,7 +119,7 @@ class DefaultSettings
     /**
      * @return int
      */
-    public function getSaltLength()
+    public function getSaltLength(): int
     {
         return $this->saltLength;
     }
@@ -132,7 +135,7 @@ class DefaultSettings
     /**
      * @return boolean
      */
-    public function isRandomSaltConnect()
+    public function isRandomSaltConnect(): bool
     {
         return $this->randomSaltConnect;
     }
@@ -148,7 +151,7 @@ class DefaultSettings
     /**
      * @return boolean
      */
-    public function isResultHashCamouflage()
+    public function isResultHashCamouflage(): bool
     {
         return $this->resultHashCamouflage;
     }
@@ -164,7 +167,7 @@ class DefaultSettings
     /**
      * @return string
      */
-    public function getResultHashAs()
+    public function getResultHashAs(): string
     {
         return $this->resultHashAs;
     }
@@ -180,18 +183,33 @@ class DefaultSettings
     /**
      * @return boolean
      */
-    public function isCheckAlreadyGeneratetPassword()
+    public function isCheckAlreadyGeneratePassword(): bool
     {
-        return $this->checkAlreadyGeneratetPassword;
+        return $this->checkAlreadyGeneratePassword;
     }
 
     /**
-     * @param boolean $checkAlreadyGeneratetPassword
+     * @param boolean $checkAlreadyGeneratePassword
      */
-    public function setCheckAlreadyGeneratetPassword( bool $checkAlreadyGeneratetPassword)
+    public function setCheckAlreadyGeneratePassword(bool $checkAlreadyGeneratePassword)
     {
-        $this->checkAlreadyGeneratetPassword = $checkAlreadyGeneratetPassword;
+        $this->checkAlreadyGeneratePassword = $checkAlreadyGeneratePassword;
     }
 
+    /**
+     * @return boolean
+     */
+    public function isMin(): bool
+    {
+        return $this->min;
+    }
+
+    /**
+     * @param boolean $min
+     */
+    public function setMin(bool $min)
+    {
+        $this->min = $min;
+    }
 
 }
