@@ -2,6 +2,7 @@
 
 namespace src\Command;
 
+use src\service\FileContentGenerator;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -19,9 +20,12 @@ class PasswordCreatorCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $text = 'all good';
+//        $text = 'all good';
+        $fileGenerator = new FileContentGenerator();
 
-        $output->writeln($text);
+        $outText = $fileGenerator->getDataForFile();
+
+        $output->writeln($outText);
     }
 
 }

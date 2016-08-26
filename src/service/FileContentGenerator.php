@@ -8,7 +8,7 @@
 
 namespace src\service;
 
-class CreateData
+class FileContentGenerator
 {
     /** @var  DefaultSettings */
     protected $options;
@@ -23,7 +23,7 @@ class CreateData
 
     public function getDataForFile()
     {
-
+        return 'test';
     }
 
     public function prepereData()
